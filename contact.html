@@ -57,7 +57,22 @@
 </div>
 <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start" id="form">
 <div class="lg:col-span-7 bg-surface-container-lowest rounded-xl soft-shadow p-8 border border-surface-variant">
-<form action="mailto:coralstonecare@gmail.com" method="post" enctype="text/plain" class="space-y-6">
+<div id="thank-you-message" class="hidden mb-6 p-4 bg-secondary-fixed border border-secondary-container rounded-lg text-on-secondary-fixed">
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-secondary">check_circle</span>
+<div>
+<p class="font-label-sm text-label-sm uppercase mb-1">Message sent!</p>
+<p class="font-body-md text-body-md">Thanks for reaching out — we'll get back to you within 24 hours.</p>
+</div>
+</div>
+</div>
+<script>if(new URLSearchParams(location.search).get('sent')==='1'){document.getElementById('thank-you-message').classList.remove('hidden');}</script>
+<form action="https://formsubmit.co/coralstonecare@gmail.com" method="POST" class="space-y-6">
+<input type="hidden" name="_subject" value="New quote request from coralstonecare.com"/>
+<input type="hidden" name="_template" value="table"/>
+<input type="hidden" name="_captcha" value="false"/>
+<input type="hidden" name="_next" value="https://coralstonecare.com/contact?sent=1"/>
+<input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off"/>
 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
 <div>
 <label class="block font-label-sm text-label-sm text-primary mb-2 uppercase" for="firstName">First Name</label>
