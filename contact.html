@@ -67,12 +67,12 @@
 </div>
 </div>
 <script>if(new URLSearchParams(location.search).get('sent')==='1'){document.getElementById('thank-you-message').classList.remove('hidden');}</script>
-<form action="https://formsubmit.co/coralstonecare@gmail.com" method="POST" class="space-y-6">
-<input type="hidden" name="_subject" value="New quote request from coralstonecare.com"/>
-<input type="hidden" name="_template" value="table"/>
-<input type="hidden" name="_captcha" value="false"/>
-<input type="hidden" name="_next" value="https://coralstonecare.com/contact?sent=1"/>
-<input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off"/>
+<form action="https://api.web3forms.com/submit" method="POST" class="space-y-6">
+<input type="hidden" name="access_key" value="9be356b9-0ee0-483e-82ea-e18d4a235f3e"/>
+<input type="hidden" name="subject" value="New quote request from coralstonecare.com"/>
+<input type="hidden" name="from_name" value="Coral Stone Care Website"/>
+<input type="hidden" name="redirect" value="https://coralstonecare.com/contact?sent=1"/>
+<input type="checkbox" name="botcheck" style="display:none" tabindex="-1"/>
 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
 <div>
 <label class="block font-label-sm text-label-sm text-primary mb-2 uppercase" for="firstName">First Name</label>
