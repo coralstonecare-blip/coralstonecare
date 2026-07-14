@@ -1,0 +1,63 @@
+name: Daily SEO content
+
+on:
+  schedule:
+    - cron: "0 15 * * *"
+  workflow_dispatch:
+    inputs:
+      review_only:
+        description: "Generate a review package without publishing"
+        required: false
+        type: boolean
+        default: true
+
+permissions:
+  contents: write
+
+concurrency:
+  group: seo-data-write
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: npm test
+      - name: Check credentials
+        id: credentials
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        run: |
+          if [ -n "$OPENAI_API_KEY" ]; then echo "ready=true" >> "$GITHUB_OUTPUT"; else echo "ready=false" >> "$GITHUB_OUTPUT"; fi
+      - name: Generate content
+        if: steps.credentials.outputs.ready == 'true'
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          SEO_TEXT_MODEL: ${{ vars.SEO_TEXT_MODEL || 'gpt-5.4' }}
+          SEO_IMAGE_MODEL: ${{ vars.SEO_IMAGE_MODEL || 'gpt-image-2' }}
+          GSC_SITE_URL: ${{ vars.GSC_SITE_URL || 'sc-domain:coralstonecare.com' }}
+          GSC_CLIENT_ID: ${{ secrets.GSC_CLIENT_ID }}
+          GSC_CLIENT_SECRET: ${{ secrets.GSC_CLIENT_SECRET }}
+          GSC_REFRESH_TOKEN: ${{ secrets.GSC_REFRESH_TOKEN }}
+        run: |
+          set +e
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ] && [ "${{ inputs.review_only }}" = "true" ]; then
+            node seo-engine/src/daily.js --review
+          else
+            node seo-engine/src/daily.js --publish
+          fi
+          code=$?
+          if [ "$code" -ne 0 ] && [ "$code" -ne 2 ]; then exit "$code"; fi
+      - name: Commit published content and state
+        if: steps.credentials.outputs.ready == 'true'
+        run: |
+          if git diff --quiet && [ -z "$(git status --porcelain)" ]; then exit 0; fi
+          git config user.name "Coral Stone Care SEO Bot"
+          git config user.email "seo-bot@users.noreply.github.com"
+          git add -A
+          git commit -m "Publish scheduled stone care guide"
+          git push

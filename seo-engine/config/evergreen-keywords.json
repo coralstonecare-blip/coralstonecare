@@ -1,0 +1,14 @@
+[
+  { "keyword": "how to clean coral stone without damaging it", "cluster": "coral-stone-cleaning", "intent": "informational" },
+  { "keyword": "how often to seal coral stone in Miami", "cluster": "restoration-sealing", "intent": "informational-commercial" },
+  { "keyword": "why coral stone turns black in humid weather", "cluster": "coral-stone-cleaning", "intent": "problem-solution" },
+  { "keyword": "coral stone pool deck maintenance Miami", "cluster": "pool-decks-exteriors", "intent": "local-commercial" },
+  { "keyword": "best way to remove algae from natural stone", "cluster": "coral-stone-cleaning", "intent": "problem-solution" },
+  { "keyword": "signs natural stone sealer is wearing off", "cluster": "restoration-sealing", "intent": "problem-solution" },
+  { "keyword": "saltwater pool effects on coral stone", "cluster": "pool-decks-exteriors", "intent": "informational" },
+  { "keyword": "commercial limestone maintenance Miami", "cluster": "commercial-historic", "intent": "local-commercial" },
+  { "keyword": "how Miami humidity affects limestone patios", "cluster": "miami-climate-maintenance", "intent": "informational" },
+  { "keyword": "pressure washing coral stone safely", "cluster": "coral-stone-cleaning", "intent": "informational-commercial" },
+  { "keyword": "pool deck drainage and natural stone staining", "cluster": "pool-decks-exteriors", "intent": "problem-solution" },
+  { "keyword": "preventive stone maintenance for Miami HOAs", "cluster": "commercial-historic", "intent": "local-commercial" }
+]

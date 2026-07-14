@@ -1,0 +1,18 @@
+{
+  "name": "Coral Stone Care",
+  "baseUrl": "https://www.coralstonecare.com",
+  "location": "Miami, Florida",
+  "phone": "+1-786-257-8858",
+  "email": "coralstonecare@gmail.com",
+  "minimumQualityScore": 70,
+  "maxSameClusterInARow": 3,
+  "minimumWords": 850,
+  "maximumWords": 1600,
+  "forbiddenIntents": [
+    "buy coral stone",
+    "coral stone supplier",
+    "coral stone for sale",
+    "wholesale coral stone",
+    "chicago brick supplier"
+  ]
+}

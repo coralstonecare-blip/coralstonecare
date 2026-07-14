@@ -4,3 +4,8 @@ node_modules
 *.log
 .env
 .env.local
+seo-engine/logs/
+seo-engine/review/*
+!seo-engine/review/.gitkeep
+seo-engine/reports/*
+!seo-engine/reports/.gitkeep

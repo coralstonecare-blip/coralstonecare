@@ -1,0 +1,59 @@
+[
+  {
+    "id": "coral-stone-cleaning",
+    "label": "Coral stone cleaning",
+    "pillarUrl": "/services",
+    "terms": ["coral stone cleaning", "clean coral stone", "mildew on coral stone", "algae removal natural stone"],
+    "moneyPages": [
+      { "url": "/services", "anchors": ["coral stone cleaning services", "natural stone cleaning in Miami"] },
+      { "url": "/contact", "anchors": ["request a stone care quote", "schedule a surface evaluation"] }
+    ],
+    "technicalStandards": "Explain porosity, biological growth, moisture, calibrated cleaning pressure, residue removal, and why a test area matters. Never recommend chlorine or high pressure as a universal solution."
+  },
+  {
+    "id": "restoration-sealing",
+    "label": "Restoration and sealing",
+    "pillarUrl": "/restoration",
+    "terms": ["coral stone sealing", "reseal coral stone", "coral stone restoration", "penetrating sealer natural stone"],
+    "moneyPages": [
+      { "url": "/restoration", "anchors": ["coral stone restoration and sealing", "professional stone sealing"] },
+      { "url": "/contact", "anchors": ["request a restoration quote", "ask for a condition assessment"] }
+    ],
+    "technicalStandards": "Cover preparation, dry-time requirements, breathable penetrating products, compatibility with prior treatments, and slip or appearance considerations without inventing product claims."
+  },
+  {
+    "id": "pool-decks-exteriors",
+    "label": "Pool decks and exterior stone",
+    "pillarUrl": "/exterior",
+    "terms": ["coral stone pool deck maintenance", "pool deck restoration Miami", "stone driveway cleaning", "saltwater pool stone care"],
+    "moneyPages": [
+      { "url": "/exterior", "anchors": ["pool deck and exterior stone care", "Miami exterior stone restoration"] },
+      { "url": "/restoration", "anchors": ["restore and protect natural stone", "professional sealing options"] },
+      { "url": "/contact", "anchors": ["request a pool deck quote", "send photos for an evaluation"] }
+    ],
+    "technicalStandards": "Discuss wet-dry cycling, drainage, salt or chlorinated water, sunscreen oils, UV exposure, surface traction, joints, and irrigation overspray."
+  },
+  {
+    "id": "commercial-historic",
+    "label": "Commercial and historic stone",
+    "pillarUrl": "/commercial",
+    "terms": ["commercial stone maintenance Miami", "historic limestone cleaning", "hotel stone maintenance", "HOA stone cleaning"],
+    "moneyPages": [
+      { "url": "/commercial", "anchors": ["commercial stone maintenance", "historic stone care in Miami"] },
+      { "url": "/contact", "anchors": ["request a commercial assessment", "plan a maintenance program"] }
+    ],
+    "technicalStandards": "Emphasize test areas, documentation, occupied-site planning, drainage protection, compatible chemistry, phased work, and maintenance records."
+  },
+  {
+    "id": "miami-climate-maintenance",
+    "label": "Miami climate and preventive care",
+    "pillarUrl": "/services",
+    "terms": ["natural stone maintenance Miami", "humidity damage limestone", "salt air natural stone", "prevent mildew stone patio"],
+    "moneyPages": [
+      { "url": "/services", "anchors": ["preventive natural stone maintenance", "Miami stone cleaning services"] },
+      { "url": "/exterior", "anchors": ["exterior stone care", "pool deck and driveway maintenance"] },
+      { "url": "/contact", "anchors": ["request a maintenance recommendation", "schedule a stone inspection"] }
+    ],
+    "technicalStandards": "Connect Miami humidity, rainfall, UV, salt air, shade, landscaping, drainage, and maintenance frequency. Avoid exact service intervals unless framed as inspection guidance."
+  }
+]

@@ -1,0 +1,18 @@
+{
+  "name": "coralstonecare-site",
+  "private": true,
+  "type": "module",
+  "engines": { "node": ">=20" },
+  "scripts": {
+    "dev": "node scripts/serve-static.js",
+    "test": "node --test seo-engine/test/*.test.js",
+    "seo:daily": "node seo-engine/src/daily.js",
+    "seo:daily:review": "node seo-engine/src/daily.js --review",
+    "seo:daily:publish": "node seo-engine/src/daily.js --publish",
+    "seo:report": "node seo-engine/src/report.js",
+    "seo:audit": "node seo-engine/src/audit.js",
+    "seo:token-health": "node seo-engine/src/token-health.js",
+    "seo:sitemap": "node seo-engine/src/build-sitemap.js",
+    "seo:validate": "node seo-engine/src/validate-site.js"
+  }
+}

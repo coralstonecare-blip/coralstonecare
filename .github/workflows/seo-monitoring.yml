@@ -1,0 +1,66 @@
+name: SEO monitoring
+
+on:
+  schedule:
+    - cron: "0 12 * * 6"
+    - cron: "0 13 15,30 * *"
+    - cron: "10 13 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: seo-data-write
+  cancel-in-progress: false
+
+jobs:
+  token-health:
+    if: github.event_name == 'workflow_dispatch' || github.event.schedule == '10 13 * * *'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 20 }
+      - name: Check Search Console token
+        env:
+          GSC_SITE_URL: ${{ vars.GSC_SITE_URL || 'sc-domain:coralstonecare.com' }}
+          GSC_CLIENT_ID: ${{ secrets.GSC_CLIENT_ID }}
+          GSC_CLIENT_SECRET: ${{ secrets.GSC_CLIENT_SECRET }}
+          GSC_REFRESH_TOKEN: ${{ secrets.GSC_REFRESH_TOKEN }}
+        run: |
+          if [ -z "$GSC_REFRESH_TOKEN" ]; then echo "::warning::GSC secrets are not configured"; exit 0; fi
+          node seo-engine/src/token-health.js
+
+  weekly-report:
+    if: github.event_name == 'workflow_dispatch' || github.event.schedule == '0 12 * * 6'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 20 }
+      - name: Generate report
+        env:
+          GSC_SITE_URL: ${{ vars.GSC_SITE_URL || 'sc-domain:coralstonecare.com' }}
+          GSC_CLIENT_ID: ${{ secrets.GSC_CLIENT_ID }}
+          GSC_CLIENT_SECRET: ${{ secrets.GSC_CLIENT_SECRET }}
+          GSC_REFRESH_TOKEN: ${{ secrets.GSC_REFRESH_TOKEN }}
+        run: node seo-engine/src/report.js
+      - uses: actions/upload-artifact@v4
+        with:
+          name: keyword-report
+          path: seo-engine/reports/*.json
+
+  production-audit:
+    if: github.event_name == 'workflow_dispatch' || github.event.schedule == '0 13 15,30 * *'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 20 }
+      - run: node seo-engine/src/audit.js
+      - if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: production-audit
+          path: seo-engine/reports/*.json

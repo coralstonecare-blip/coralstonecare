@@ -1,0 +1,22 @@
+(() => {
+  const id = window.CORAL_STONE_CARE_CONFIG?.gtmId?.trim();
+  if (!id || !/^GTM-[A-Z0-9]+$/i.test(id)) return;
+
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({ "gtm.start": Date.now(), event: "gtm.js" });
+
+  const script = document.createElement("script");
+  script.async = true;
+  script.src = `https://www.googletagmanager.com/gtm.js?id=${encodeURIComponent(id)}`;
+  document.head.appendChild(script);
+
+  const iframe = document.createElement("iframe");
+  iframe.src = `https://www.googletagmanager.com/ns.html?id=${encodeURIComponent(id)}`;
+  iframe.height = "0";
+  iframe.width = "0";
+  iframe.style.cssText = "display:none;visibility:hidden";
+  iframe.title = "Google Tag Manager";
+  const noscript = document.createElement("noscript");
+  noscript.appendChild(iframe);
+  document.body.prepend(noscript);
+})();
