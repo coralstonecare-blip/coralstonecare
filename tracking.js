@@ -1,5 +1,22 @@
 (() => {
-  const id = window.CORAL_STONE_CARE_CONFIG?.gtmId?.trim();
+  const config = window.CORAL_STONE_CARE_CONFIG || {};
+  const clarityId = config.clarityId?.trim();
+
+  if (clarityId && /^[a-z0-9]+$/i.test(clarityId)) {
+    window.clarity = window.clarity || function clarityQueue() {
+      (window.clarity.q = window.clarity.q || []).push(arguments);
+    };
+
+    if (!document.querySelector("script[data-coral-stone-clarity]")) {
+      const clarityScript = document.createElement("script");
+      clarityScript.async = true;
+      clarityScript.dataset.coralStoneClarity = "true";
+      clarityScript.src = `https://www.clarity.ms/tag/${encodeURIComponent(clarityId)}`;
+      document.head.appendChild(clarityScript);
+    }
+  }
+
+  const id = config.gtmId?.trim();
   if (!id || !/^GTM-[A-Z0-9]+$/i.test(id)) return;
 
   window.dataLayer = window.dataLayer || [];
