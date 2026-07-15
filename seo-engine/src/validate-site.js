@@ -55,5 +55,5 @@ if (failures.length) {
   failures.forEach((failure) => annotation("error", "SEO validation", failure));
   process.exitCode = 1;
 } else {
-  console.log(`SEO validation passed for ${canonicals.size} indexable HTML pages.`);
+  console.log(`SEO validation passed for ${canonicals.size} HTML pages.`);
 }

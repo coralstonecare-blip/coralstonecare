@@ -68,11 +68,13 @@
   };
 
   const query = new URLSearchParams(window.location.search);
-  if (window.location.pathname === "/contact") {
-    const storageKey = "coral-stone-care-generate-lead";
+  const contactSuccess = window.location.pathname === "/contact" && query.get("sent") === "1";
+  const landingSuccess = window.location.pathname === "/thank-you" && query.get("submitted") === "1";
+  if (window.location.pathname === "/contact" || window.location.pathname === "/thank-you") {
+    const storageKey = `coral-stone-care-generate-lead:${window.location.pathname}`;
     let alreadyRecorded = false;
     try {
-      if (query.get("sent") === "1") {
+      if (contactSuccess || landingSuccess) {
         alreadyRecorded = window.sessionStorage.getItem(storageKey) === "1";
         if (!alreadyRecorded) window.sessionStorage.setItem(storageKey, "1");
       } else {
@@ -81,8 +83,11 @@
     } catch {
       // Analytics must still work if storage is unavailable.
     }
-    if (query.get("sent") === "1" && !alreadyRecorded) {
-      sendEvent("generate_lead", { method: "quote_form" });
+    if ((contactSuccess || landingSuccess) && !alreadyRecorded) {
+      sendEvent("generate_lead", {
+        method: "quote_form",
+        form_location: landingSuccess ? "google_ads_landing" : "contact_page"
+      });
     }
   }
 
@@ -97,7 +102,7 @@
       return;
     }
 
-    if (/^\/?contact\/?(?:#.*)?$/.test(href) && /request (?:a )?quote/i.test(link.textContent || "")) {
+    if ((/^\/?contact\/?(?:#.*)?$/.test(href) || href === "#quote") && /(?:request|get|free|check).*quote/i.test(link.textContent || "")) {
       sendEvent("quote_cta_click", { link_url: href });
     }
   });

@@ -11,9 +11,11 @@ test("builds clean URLs and excludes the engine", () => {
   fs.mkdirSync(path.join(root, "seo-engine"), { recursive: true });
   fs.writeFileSync(path.join(root, "index.html"), "home");
   fs.writeFileSync(path.join(root, "services.html"), "services");
+  fs.writeFileSync(path.join(root, "thank-you.html"), '<meta name="robots" content="noindex,nofollow">');
   fs.writeFileSync(path.join(root, "blog", "guide", "index.html"), "guide");
   fs.writeFileSync(path.join(root, "seo-engine", "private.html"), "private");
   const urls = buildSitemap(root, "https://example.com");
   assert.deepEqual(urls.map((item) => item.route), ["/", "/blog/guide", "/services"]);
   assert.ok(!fs.readFileSync(path.join(root, "sitemap.xml"), "utf8").includes("private"));
+  assert.ok(!fs.readFileSync(path.join(root, "sitemap.xml"), "utf8").includes("thank-you"));
 });

@@ -19,8 +19,16 @@ function routeFor(file, root) {
   return `/${relative.slice(0, -".html".length)}`;
 }
 
+function isIndexable(file) {
+  const html = fs.readFileSync(file, "utf8");
+  const robotsMeta = html.match(/<meta\b[^>]*\bname=["']robots["'][^>]*>/i)?.[0];
+  const content = robotsMeta?.match(/\bcontent=["']([^"']*)/i)?.[1] || "";
+  return !/(?:^|[,\s])noindex(?:$|[,\s])/i.test(content);
+}
+
 export function buildSitemap(root, baseUrl) {
   const urls = walk(root, root)
+    .filter(isIndexable)
     .map((file) => ({
       route: routeFor(file, root),
       lastmod: fs.statSync(file).mtime.toISOString().slice(0, 10)
