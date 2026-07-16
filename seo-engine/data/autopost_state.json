@@ -12,6 +12,13 @@
       "slug": "clean-coral-stone-miami",
       "date": "2026-07-15",
       "score": 90
+    },
+    {
+      "keyword": "coral stone pool deck maintenance Miami",
+      "cluster": "pool-decks-exteriors",
+      "slug": "coral-stone-pool-deck-maintenance-miami",
+      "date": "2026-07-16",
+      "score": 85
     }
   ],
   "drafts": [
@@ -26,12 +33,13 @@
   ],
   "clusterHistory": [
     "restoration-sealing",
-    "coral-stone-cleaning"
+    "coral-stone-cleaning",
+    "pool-decks-exteriors"
   ],
   "lastRun": {
-    "date": "2026-07-15T16:13:00.518Z",
-    "status": "rejected",
-    "slug": "coral-stone-black-humid-weather",
+    "date": "2026-07-16T16:10:12.275Z",
+    "status": "published",
+    "slug": "coral-stone-pool-deck-maintenance-miami",
     "score": 85
   }
 }
