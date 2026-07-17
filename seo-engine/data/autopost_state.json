@@ -19,6 +19,13 @@
       "slug": "coral-stone-pool-deck-maintenance-miami",
       "date": "2026-07-16",
       "score": 85
+    },
+    {
+      "keyword": "best way to remove algae from natural stone",
+      "cluster": "coral-stone-cleaning",
+      "slug": "remove-algae-natural-stone-miami",
+      "date": "2026-07-17",
+      "score": 90
     }
   ],
   "drafts": [
@@ -34,12 +41,13 @@
   "clusterHistory": [
     "restoration-sealing",
     "coral-stone-cleaning",
-    "pool-decks-exteriors"
+    "pool-decks-exteriors",
+    "coral-stone-cleaning"
   ],
   "lastRun": {
-    "date": "2026-07-16T16:10:12.275Z",
+    "date": "2026-07-17T16:08:29.066Z",
     "status": "published",
-    "slug": "coral-stone-pool-deck-maintenance-miami",
-    "score": 85
+    "slug": "remove-algae-natural-stone-miami",
+    "score": 90
   }
 }
