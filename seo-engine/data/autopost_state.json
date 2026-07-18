@@ -36,6 +36,14 @@
       "date": "2026-07-15",
       "score": 85,
       "status": "rejected"
+    },
+    {
+      "keyword": "signs natural stone sealer is wearing off",
+      "cluster": "restoration-sealing",
+      "slug": "stone-sealer-wearing-off",
+      "date": "2026-07-18",
+      "score": 85,
+      "status": "rejected"
     }
   ],
   "clusterHistory": [
@@ -45,9 +53,9 @@
     "coral-stone-cleaning"
   ],
   "lastRun": {
-    "date": "2026-07-17T16:08:29.066Z",
-    "status": "published",
-    "slug": "remove-algae-natural-stone-miami",
-    "score": 90
+    "date": "2026-07-18T15:43:28.928Z",
+    "status": "rejected",
+    "slug": "stone-sealer-wearing-off",
+    "score": 85
   }
 }
