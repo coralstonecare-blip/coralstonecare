@@ -26,6 +26,13 @@
       "slug": "remove-algae-natural-stone-miami",
       "date": "2026-07-17",
       "score": 90
+    },
+    {
+      "keyword": "saltwater pool effects on coral stone",
+      "cluster": "pool-decks-exteriors",
+      "slug": "saltwater-pool-coral-stone",
+      "date": "2026-07-19",
+      "score": 90
     }
   ],
   "drafts": [
@@ -50,12 +57,13 @@
     "restoration-sealing",
     "coral-stone-cleaning",
     "pool-decks-exteriors",
-    "coral-stone-cleaning"
+    "coral-stone-cleaning",
+    "pool-decks-exteriors"
   ],
   "lastRun": {
-    "date": "2026-07-18T15:43:28.928Z",
-    "status": "rejected",
-    "slug": "stone-sealer-wearing-off",
-    "score": 85
+    "date": "2026-07-19T15:45:15.495Z",
+    "status": "published",
+    "slug": "saltwater-pool-coral-stone",
+    "score": 90
   }
 }
