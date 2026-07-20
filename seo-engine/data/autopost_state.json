@@ -51,6 +51,14 @@
       "date": "2026-07-18",
       "score": 85,
       "status": "rejected"
+    },
+    {
+      "keyword": "commercial limestone maintenance Miami",
+      "cluster": "commercial-historic",
+      "slug": "commercial-limestone-maintenance-miami",
+      "date": "2026-07-20",
+      "score": 85,
+      "status": "rejected"
     }
   ],
   "clusterHistory": [
@@ -61,9 +69,9 @@
     "pool-decks-exteriors"
   ],
   "lastRun": {
-    "date": "2026-07-19T15:45:15.495Z",
-    "status": "published",
-    "slug": "saltwater-pool-coral-stone",
-    "score": 90
+    "date": "2026-07-20T16:20:17.229Z",
+    "status": "rejected",
+    "slug": "commercial-limestone-maintenance-miami",
+    "score": 85
   }
 }
