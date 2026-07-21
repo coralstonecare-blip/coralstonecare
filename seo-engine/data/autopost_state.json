@@ -33,6 +33,13 @@
       "slug": "saltwater-pool-coral-stone",
       "date": "2026-07-19",
       "score": 90
+    },
+    {
+      "keyword": "how Miami humidity affects limestone patios",
+      "cluster": "miami-climate-maintenance",
+      "slug": "miami-humidity-limestone-patios",
+      "date": "2026-07-21",
+      "score": 90
     }
   ],
   "drafts": [
@@ -66,12 +73,13 @@
     "coral-stone-cleaning",
     "pool-decks-exteriors",
     "coral-stone-cleaning",
-    "pool-decks-exteriors"
+    "pool-decks-exteriors",
+    "miami-climate-maintenance"
   ],
   "lastRun": {
-    "date": "2026-07-20T16:20:17.229Z",
-    "status": "rejected",
-    "slug": "commercial-limestone-maintenance-miami",
-    "score": 85
+    "date": "2026-07-21T16:15:06.709Z",
+    "status": "published",
+    "slug": "miami-humidity-limestone-patios",
+    "score": 90
   }
 }
