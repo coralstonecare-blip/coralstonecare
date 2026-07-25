@@ -80,6 +80,14 @@
       "date": "2026-07-20",
       "score": 85,
       "status": "rejected"
+    },
+    {
+      "keyword": "preventive stone maintenance for Miami HOAs",
+      "cluster": "commercial-historic",
+      "slug": "miami-hoa-stone-maintenance",
+      "date": "2026-07-25",
+      "score": 85,
+      "status": "rejected"
     }
   ],
   "clusterHistory": [
@@ -93,9 +101,9 @@
     "pool-decks-exteriors"
   ],
   "lastRun": {
-    "date": "2026-07-23T16:19:53.593Z",
-    "status": "published",
-    "slug": "miami-pool-deck-drainage-stone-staining",
-    "score": 90
+    "date": "2026-07-25T15:56:35.930Z",
+    "status": "rejected",
+    "slug": "miami-hoa-stone-maintenance",
+    "score": 85
   }
 }
